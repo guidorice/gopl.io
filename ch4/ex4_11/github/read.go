@@ -14,7 +14,7 @@ import (
 )
 
 // ReadIssue reads an issue id from github api
-func ReadIssue(token Token, repo Repo, id IssueId) (Issue, error) {
+func ReadIssue(token string, repo string, id string) (Issue, error) {
 	url := APIURL + "repos/" + string(repo) + "/issues/" + string(id)
 	client := &http.Client{}
 	req, _ := http.NewRequest("GET", string(url), nil)

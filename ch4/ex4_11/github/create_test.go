@@ -6,8 +6,8 @@ import (
 )
 
 func TestCreateIssue(t *testing.T) {
-	repo := Repo("guidorice/gopl.io")
-	token := Token(os.Getenv(GithubEnvVar))
+	repo := "guidorice/gopl.io"
+	token := os.Getenv(GithubEnvVar)
 	if token == "" {
 		t.Fatal("missing Github token")
 	}

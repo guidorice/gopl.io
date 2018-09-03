@@ -6,9 +6,9 @@ import (
 )
 
 func TestCloseIssue(t *testing.T) {
-	repo := Repo("guidorice/gopl.io")
-	token := Token(os.Getenv(GithubEnvVar))
-	issueId := IssueId("16")
+	repo := "guidorice/gopl.io"
+	token := os.Getenv(GithubEnvVar)
+	issueId := "16"
 	if token == "" {
 		t.Fatal("missing Github token")
 	}

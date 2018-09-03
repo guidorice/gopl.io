@@ -15,7 +15,7 @@ import (
 )
 
 // CloseIssue closes an issue id via github api
-func CloseIssue(token Token, repo Repo, id IssueId) (Issue, error) {
+func CloseIssue(token string, repo string, id string) (Issue, error) {
 	url := APIURL + "repos/" + string(repo) + "/issues/" + string(id)
 	client := &http.Client{}
 	patch := `{ "state": "closed" }`

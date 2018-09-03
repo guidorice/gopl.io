@@ -16,7 +16,7 @@ import (
 
 // SearchIssues queries the GitHub issue tracker. note: searches across all
 // repos, so add add terms like repo:golang/go is:open json decoder to narrow scope.
-func SearchIssues(token Token, terms string) (*IssuesSearchResult, error) {
+func SearchIssues(token string, terms string) (*IssuesSearchResult, error) {
 	q := url.QueryEscape(terms)
 	u := IssuesSearchURL + "?q=" + q
 	client := &http.Client{}

@@ -18,7 +18,7 @@ func TestSearchIssues(t *testing.T) {
 		"json",
 		"decoder",
 	}
-	token := Token(os.Getenv(GithubEnvVar))
+	token := os.Getenv(GithubEnvVar)
 	_, err := SearchIssues(token, strings.Join(terms, " "))
 	if err != nil {
 		t.Errorf("SearchIssues: %v", err)
