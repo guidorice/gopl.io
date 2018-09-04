@@ -7,6 +7,7 @@ package main
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"image/jpeg"
 	"os"
@@ -16,7 +17,6 @@ import (
 	"strings"
 
 	"github.com/guidorice/gopl.io/ch4/ex4_13/poster"
-	"github.com/pkg/errors"
 )
 
 func haltIf(err error) {
@@ -31,7 +31,7 @@ func main() {
 	apiKey, err := poster.Key()
 	haltIf(err)
 	if len(os.Args[1:]) < 1 {
-		haltIf(errors.New("error: please provide a movie omdbId, title, or search string."))
+		haltIf(errors.New("error: please provide a movie omdbId, title, or search string"))
 	}
 	query := strings.Join(os.Args[1:], " ")
 	if detectId(query) {
