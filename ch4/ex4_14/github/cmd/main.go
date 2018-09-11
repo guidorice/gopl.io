@@ -9,17 +9,15 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+
+	"github.com/guidorice/gopl.io/ch4/ex4_14/github"
 )
 
 func main() {
 	http.HandleFunc("/issue", issueHandler)
-	http.HandleFunc("/", indexHandler)
+	http.HandleFunc("/", github.IndexHandler)
 	err := http.ListenAndServe("localhost:8000", nil)
 	log.Fatal(err)
-}
-
-func indexHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Printf("request / %v %v", w, r)
 }
 
 func issueHandler(w http.ResponseWriter, r *http.Request) {
