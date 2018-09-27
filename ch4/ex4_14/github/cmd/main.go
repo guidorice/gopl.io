@@ -20,6 +20,7 @@ func main() {
 	log.Fatal(err)
 }
 
+// TODO: move out of main
 func issueHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("issue / %v %v", w, r)
 }
