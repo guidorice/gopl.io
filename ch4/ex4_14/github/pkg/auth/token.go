@@ -7,7 +7,7 @@ import (
 
 const GithubEnvVar = "GITHUB_TOKEN"
 
-// NewContext returns a context having the environment variable GITHUB_TOKEN.
+// NewContext returns a Context having the environment variable GITHUB_TOKEN.
 func NewContext(ctx context.Context) context.Context {
 	token := os.Getenv(GithubEnvVar)
 	if token != "" {
